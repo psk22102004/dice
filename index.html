@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Grandiflora+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function clicked(){
+            let x = Math.ceil(Math.random() * 6);
+            let y = Math.ceil(Math.random() * 6);
+            //var rand1 = "dice" + x + ".png";
+            var rand2 = "images/" + "dice" + x + ".png";
+            // Two random numbers generated...
+            document.querySelector(".d1").setAttribute("src", rand2);
+             document.querySelector(".d2").setAttribute("src","images/dice"+y+".png");
+             //for changing the src attribute of dice 1 we created a seperate variable whereas for dice 2 we directly fed the address
+             if(x>y){
+                document.getElementsByClassName("player")[0].innerHTML=("🚩 Player 1 wins !!");
+             }
+             else if(y>x){
+                document.getElementsByClassName("player")[0].innerHTML=("🚩 Player 2 wins !!");
+             }
+             else{
+                document.getElementsByClassName("player")[0].innerHTML=("Draw. 🚩");
+             }
+        }
+    </script>
+    <div class="container">
+        <h1 class="player">🚩 Player 1 Wins !</h1>
+        <div class="dice1">
+            <h2 class="player1">player 1</h2>
+            <img src="images/dice6.png" class="d1" alt="DICE 6"> 
+        </div>
+        <div class="dice2">
+            <h2 class="player2">player 2</h2>
+            <img src="images/dice2.png" class="d2" alt="DICE 2">
+        </div>
+        <div class="roll">
+            <button type="button" class="btn" onclick="clicked()">Roll !!</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h3>©2023 @psk22102004</h3>
+</body>
+</html>
